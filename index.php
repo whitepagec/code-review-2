@@ -15,7 +15,8 @@ class whyme {
   
   private function getitem(){
     
-    if(!this->$answer)
+    if(!$this->answer)
+        $subtotal1 = 10;
         echo "not null";
         
   }
