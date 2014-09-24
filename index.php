@@ -5,7 +5,6 @@ class whyme {
   
   public function chooseme($input1, $input2){
     $total = $input1 + $input2;
-    $subtotal = 0;
     return $total;
   }
   
@@ -27,5 +26,6 @@ class whyme {
   
   echo "Answer is " . $result;
   
-
+  $az = array("abc", "def", "ghi", "jkl");
+  echo $az;
 ?>
