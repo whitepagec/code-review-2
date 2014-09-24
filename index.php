@@ -3,7 +3,7 @@ class whyme {
 
   public $answer = "answer here";
   
-  function chooseme($input1, $input2){
+  public function chooseme($input1, $input2){
     $total = $input1 + $input2;
     $subtotal = 0;
     return $total;
@@ -11,6 +11,13 @@ class whyme {
   
   function chooseher(){
     echo "choose here ??";
+  }
+  
+  private function getitem(){
+    
+    if(!this->$answer)
+        echo "not null";
+        
   }
 
 }
