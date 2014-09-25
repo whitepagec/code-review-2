@@ -1,11 +1,11 @@
 <?php
 /**
- * @package		Joomla.Site
+ * @package		Joomla.Administrator
  * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license		GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// Set flag that this is a parent file.
+// Set flag that this is a parent file
 define('_JEXEC', 1);
 define('DS', DIRECTORY_SEPARATOR);
 
@@ -19,15 +19,19 @@ if (!defined('_JDEFINES')) {
 }
 
 require_once JPATH_BASE.'/includes/framework.php';
+require_once JPATH_BASE.'/includes/helper.php';
+require_once JPATH_BASE.'/includes/toolbar.php';
 
 // Mark afterLoad in the profiler.
 JDEBUG ? $_PROFILER->mark('afterLoad') : null;
 
 // Instantiate the application.
-$app = JFactory::getApplication('site');
+$app = JFactory::getApplication('administrator');
 
 // Initialise the application.
-$app->initialise();
+$app->initialise(array(
+	'language' => $app->getUserState('application.lang')
+));
 
 // Mark afterIntialise in the profiler.
 JDEBUG ? $_PROFILER->mark('afterInitialise') : null;
