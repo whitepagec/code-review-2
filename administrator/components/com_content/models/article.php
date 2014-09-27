@@ -121,7 +121,8 @@ class ContentModelArticle extends JModelAdmin
 
 			// Get the new item ID
 			$newId = $table->get('id');
-
+			
+			$newIds = array();
 			// Add the new ID to the array
 			$newIds[$i]	= $newId;
 			$i++;
