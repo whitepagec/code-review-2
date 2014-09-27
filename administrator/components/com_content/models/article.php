@@ -47,31 +47,9 @@ class ContentModelArticle extends JModelAdmin
 		$table = $this->getTable();
 		$i = 0;
 
-		// Check that the category exists
-		if ($categoryId)
-		{
-			$categoryTable = JTable::getInstance('Category');
-			if (!$categoryTable->load($categoryId))
-			{
-				if ($error = $categoryTable->getError())
-				{
-					// Fatal error
-					$this->setError($error);
-					return false;
-				}
-				else
-				{
-					$this->setError(JText::_('JLIB_APPLICATION_ERROR_BATCH_MOVE_CATEGORY_NOT_FOUND'));
-					return false;
-				}
-			}
-		}
+	
 
-		if (empty($categoryId))
-		{
-			$this->setError(JText::_('JLIB_APPLICATION_ERROR_BATCH_MOVE_CATEGORY_NOT_FOUND'));
-			return false;
-		}
+	
 
 		// Check that the user has create permission for the component
 		$extension = JFactory::getApplication()->input->get('option', '');
